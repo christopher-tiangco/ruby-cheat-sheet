@@ -1,0 +1,2 @@
+class ConditionalFlows
+end
