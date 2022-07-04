@@ -1,10 +1,10 @@
 # Basic hash
-hash1 = { 'key1' => 'value1', 'key2' => 'value2' }
+hash1 = { 'key1' => 'value1a', 'key2' => 'value2a' }
 
 # Symbolic hashes
-symbolic_hash1 = { key1: 'value1', key2: 'value2' }
-symbolic_hash2 = { 'key1': 'value1', 'key2': 'value2' }
-symbolic_hash3 = { :key1 => 'value1', :key2 => 'value2' }
+symbolic_hash1 = { key1: 'value1b', key2: 'value2b' }
+symbolic_hash2 = { 'key1': 'value1c', 'key2': 'value2c' }
+symbolic_hash3 = { :key1 => 'value1d', :key2 => 'value2d' }
 
 # Accessing basic hash
 puts "hash1['key1'] = #{hash1['key1']}"
