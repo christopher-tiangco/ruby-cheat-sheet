@@ -18,8 +18,10 @@ class BlocksAndIterators
 
     # Create an iterator using `yield`
     puts "\n"
-    puts '------ Create an `iterator` using `yield` ------'
-    raw_show_even_numbers((1..5)) {|i| puts "i = #{i}" if i.even? }
+    puts '------ Create an `iterator` using `yield` on a multiblock ------'
+    raw_show_even_numbers((1..5)) do |i|
+      puts "i = #{i}" if i.even?
+    end
   end
 
   def run_command(arg1)
@@ -35,17 +37,14 @@ class BlocksAndIterators
   end
 
   def show_even_numbers
-    (1..5).each {|n| puts "n = #{n}" if n.even? }
+    (1..5).each { |n| puts "n = #{n}" if n.even? }
   end
 
   def raw_show_even_numbers(numArr)
-    for i in numArr
+    numArr.each do |i|
       yield i
     end
   end
-    
-
-  def using_multiline_blocks1; end
 
   private
 
