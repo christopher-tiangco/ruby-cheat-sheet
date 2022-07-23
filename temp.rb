@@ -1,10 +1,11 @@
 class Temp
   def main
-    puts false.to_s
+    puts [].any?
   end
   
-  def test1(hash1)
-    
+  def notice_types?
+    #%w[email sms postal]
+    %w[postal printed manual]
   end
 end
 
