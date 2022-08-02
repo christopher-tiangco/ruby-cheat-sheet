@@ -9,6 +9,8 @@ class ArrayOps
     puts "first of get_array1: #{get_array1.first} | last of get_array1: #{get_array1.last}"
     line_break
     puts "range_to_array: #{range_to_array}"
+    line_break
+    puts "even_numbers: #{even_numbers}"
   end
 
   def get_array1
@@ -25,6 +27,10 @@ class ArrayOps
 
   def range_to_array
     (1..5).to_a
+  end
+
+  def even_numbers
+    [1, 2, 3, 4, 5, 6, 7, 8].select(&:even?)
   end
 end
 
