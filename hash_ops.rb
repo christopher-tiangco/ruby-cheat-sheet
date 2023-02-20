@@ -8,10 +8,12 @@ class HashOps
     line_break
     puts "convert_json_to_hash: #{convert_json_to_hash}"
     line_break
+    puts "rename_hash_keys: #{rename_hash_keys}"
+    line_break
   end
 
   def get_hash
-    { key1: 'value1', key2: 'value2'}
+    { key1: 'value1', key2: 'value2' }
   end
 
   def line_break
@@ -28,6 +30,10 @@ class HashOps
 
   def convert_json_to_hash
     JSON.parse(get_hash.to_json)
+  end
+
+  def rename_hash_keys
+    get_hash.transform_keys { |field| "#{field}.0" }
   end
 end
 

@@ -11,6 +11,11 @@ class BlocksAndIterators
     set_local_env { current_env }
     puts "local_env: #{local_env}"
 
+    # Using block as method params
+    puts "\n"
+    puts '------ Using blocks as method params ------'
+    pass_block_command { (1..5).each { |n| puts "n = #{n}" if n.odd? } }
+
     # Using iterators
     puts "\n"
     puts '------ Using `iterators` ------'
@@ -30,6 +35,10 @@ class BlocksAndIterators
 
   def test_command(filename)
     yield filename
+  end
+
+  def pass_block_command &block
+    block.call
   end
 
   def set_local_env

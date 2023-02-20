@@ -11,6 +11,12 @@ class ArrayOps
     puts "range_to_array: #{range_to_array}"
     line_break
     puts "even_numbers: #{even_numbers}"
+    line_break
+    using_splat1('a', 'b', 'c')
+    line_break
+    using_splat2(*get_array1)
+    line_break
+    using_splat3(**sample_hash)
   end
 
   def get_array1
@@ -31,6 +37,24 @@ class ArrayOps
 
   def even_numbers
     [1, 2, 3, 4, 5, 6, 7, 8].select(&:even?)
+  end
+
+  def using_splat1(_x, *args)
+    puts "using_splat1: #{args.inspect}"
+  end
+
+  def using_splat2(element1, _element2, _element3)
+    puts "using_splat2: #{element1}"
+  end
+
+  def using_splat3(client_id:, client_secret:)
+    puts "using_splat3: client_id=#{client_id} | client_secret=#{client_secret}"
+  end
+
+  private
+
+  def sample_hash
+    { client_id: 'abc', client_secret: '123' }
   end
 end
 
