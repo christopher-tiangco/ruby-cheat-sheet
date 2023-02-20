@@ -1,6 +1,8 @@
 module Oop
   module Inheritance
     class MyClass < ParentClass
+      include Inheritance
+      
       attr_reader :property_one
       attr_writer :property_two
       attr_accessor :property_three
@@ -12,11 +14,11 @@ module Oop
       end
 
       def self.method_one
-        'MyClass#method_one class method'
+        "MyClass#method_one class method"
       end
 
       def method_two
-        'MyClass#method_two instance method'
+        "MyClass#method_two instance method"
       end
 
       def call_similar_instance_protected_method
@@ -30,24 +32,28 @@ module Oop
       def call_instance_private_method
         private_method_one
       end
-      
+
       def call_similar_instance_private_method
         # Raise an error if the similar instance is able to access this instance's private methods
         raise StandardError if similar_instance.respond_to?(:private_method)
 
-        'call_similar_instance_private_method is inaccessible from another instance'
+        "call_similar_instance_private_method is inaccessible from another instance"
+      end
+
+      def call_module_method
+        shared_function_one
       end
 
       protected
 
       def protected_method_one
-        'MyClass#protected_method_one protected method'
+        "MyClass#protected_method_one protected method"
       end
 
       private
 
       def private_method_one
-        'MyClass#private_method_one private method'
+        "MyClass#private_method_one private method"
       end
     end
   end
